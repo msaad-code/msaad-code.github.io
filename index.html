@@ -1,1 +1,262 @@
-<p>zialogic.me</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* CSS Styling */
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333333;
+            --primary-color: #007bff;
+            --card-bg: #ffffff;
+            --nav-bg: #ffffff;
+        }
+
+        body.dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #f4f4f9;
+            --primary-color: #4da3ff;
+            --card-bg: #2a2a2a;
+            --nav-bg: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: var(--nav-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        nav h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        button#theme-toggle {
+            padding: 8px 15px;
+            cursor: pointer;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 50px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #home {
+            align-items: flex-start;
+        }
+
+        #home h2 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        #home p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Projects Section */
+        #projects h2, #contact h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            line-height: 1.5;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            align-items: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--nav-bg);
+            color: var(--text-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            #home h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h1>MyPortfolio</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle">Dark Mode</button>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Hello, I'm a Web Developer</h2>
+        <p>I build modern, responsive, and user-friendly websites. Welcome to my personal portfolio where I showcase my work and skills.</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="card">
+                <h3>Project One</h3>
+                <p>A simple e-commerce website built with HTML, CSS, and JavaScript. It features a modern UI and a shopping cart.</p>
+            </div>
+            <div class="card">
+                <h3>Project Two</h3>
+                <p>A weather application that fetches real-time data from an API and displays it beautifully on the screen.</p>
+            </div>
+            <div class="card">
+                <h3>Project Three</h3>
+                <p>A personal blog template with a clean design, dark mode functionality, and a responsive layout.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let's Work Together</h2>
+        <p style="margin-bottom: 30px;">Feel free to reach out for collaborations or just a friendly hello.</p>
+        <a href="mailto:your.email@example.com" class="btn">Send an Email</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MyPortfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Check local storage for theme preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggleBtn.textContent = 'Light Mode';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            // Update button text and save preference
+            if (body.classList.contains('dark-mode')) {
+                themeToggleBtn.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggleBtn.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+
+</body>
+</html>
